@@ -7,23 +7,67 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane prefHeight="400.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="indra.SampleController">
-   <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+<BorderPane prefHeight="205.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="indra.SampleController">
+   <top>
+      <HBox prefHeight="40.0" prefWidth="100.0" spacing="3.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="txtNombre" text="Oviedo" />
-            <Button fx:id="btnSaluda" mnemonicParsing="false" onAction="#onSaludaClick" text="Saluda" />
-            <Button fx:id="btnKK" layoutX="10.0" layoutY="35.0" mnemonicParsing="false" onAction="#onDespideClick" text="Despide" />
-            <Label fx:id="lblResultado">
-               <font>
-                  <Font name="Verdana" size="48.0" />
-               </font>
-            </Label>
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Button" />
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Button" />
+            <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Button" />
          </children>
-         <BorderPane.margin>
+         <padding>
             <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-         </BorderPane.margin>
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="3.0" BorderPane.alignment="CENTER">
+         <children>
+            <Hyperlink text="Hyperlink" />
+            <Hyperlink text="Hyperlink" />
+            <Hyperlink text="Hyperlink" />
+            <Hyperlink text="Hyperlink" />
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
       </VBox>
+   </left>
+   <center>
+      <ScrollPane prefViewportHeight="160.0" prefViewportWidth="420.0">
+         <content>
+            <GridPane hgap="5.0" vgap="2.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="lblResultado" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Verdana" size="48.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtNombre" text="Oviedo" GridPane.columnIndex="1" GridPane.columnSpan="2" />
+                  <Label minWidth="30.0" text="Label" />
+                  <Button fx:id="btnSaluda" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSaludaClick" text="Saluda" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button fx:id="btnKK" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onDespideClick" text="Despide" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtPropiedad" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+                  <Label fx:id="lblPropiedad" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+                  <Button fx:id="btnEducado" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="XX" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </BorderPane.margin>
+            </GridPane>
+         </content>
+      </ScrollPane>
    </center>
 </BorderPane>
