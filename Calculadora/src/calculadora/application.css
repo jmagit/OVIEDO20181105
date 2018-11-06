@@ -12,6 +12,15 @@
 	-fx-font-size: 36pt;
 	-fx-alignment: center-right;
 	-fx-label-padding: 3px;
+	-fx-max-width: 99999999;	
+	-fx-padding: 1 1 1 5;
+}
+.resumen {
+	-fx-font-size: 22pt;
+	-fx-alignment: center-right;
+	-fx-label-padding: 1 1 1 5;
+	-fx-max-width: 99999999;	
+	-fx-padding: 1 1 1 5;
 }
 
 .panel-botones {
