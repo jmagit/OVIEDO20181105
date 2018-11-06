@@ -13,7 +13,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try { 
 			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("calculadora.fxml"));
-			Scene scene = new Scene(root,450,450);
+			Scene scene = new Scene(root,450,470);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			// scene.getStylesheets().add(getClass().getResource("calculadora.css").toExternalForm());
 			primaryStage.setScene(scene);

@@ -8,10 +8,12 @@
 
 <BorderPane minHeight="320.0" minWidth="230.0" prefHeight="450.0" prefWidth="375.0" styleClass="calculadora" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculadora.CalculadoraController">
 	<top>
-		<Label fx:id="txtPantalla" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="pantalla" text="0" BorderPane.alignment="CENTER">
-         <padding>
-            <Insets right="5.0" />
-         </padding></Label>
+      <VBox>
+         <children>
+      		<Label fx:id="txtResumen" styleClass="resumen" />
+            <Label fx:id="txtPantalla" styleClass="pantalla" />
+         </children>
+      </VBox>
 	</top>
 	<center>
 		<GridPane alignment="CENTER" styleClass="panel-botones" BorderPane.alignment="CENTER">
