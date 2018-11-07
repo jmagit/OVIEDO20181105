@@ -1,12 +1,15 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 
+.root {
+	letra-pantalla: yellow;
+}
 .calculadora {
 	-fx-padding: 10px;
 	-fx-spacing: 5px;
 }
 
 .pantalla {
-	-fx-text-fill: yellow;
+	-fx-text-fill: letra-pantalla;
 	-fx-background-color: darkgreen;
 	-fx-font-size: 32px;
 	-fx-alignment: center-right;
@@ -32,16 +35,18 @@
 .button {
 	-fx-min-width: 40px;	
 	-fx-min-height: 40px;
+	-fx-background-radius: 90;
+	-fx-font-size: 22px;
+	-fx-font-weight: bold;
 }
 
 .btnDigito {
-	-fx-text-fill: blue;
-	-fx-font-size: 22px;
-	-fx-font-weight: bold;
+	-fx-text-fill: ;
+}
+.btnDigito:hover {
+	-fx-background-color: radial-gradient( focus-angle 0.0deg, focus-distance 0.0%, center 50.0% 50.0%, radius 100.0%, rgb(255,255,255) 0.0, rgb(204,255,255) 100.0 )
 }
 
 .btnOperacion {
 	-fx-text-fill: red;
-	-fx-font-size: 22px;
-	-fx-font-weight: bold;
 }
