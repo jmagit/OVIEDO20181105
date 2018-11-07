@@ -1,7 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PrincipalController">
-	<!-- TODO Add Nodes -->
+
+
+<BorderPane fx:id="root" prefHeight="255.0" prefWidth="409.0"
+	xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+	fx:controller="application.PrincipalController">
+	<left>
+		<Accordion fx:id="acordeon" BorderPane.alignment="CENTER">
+			<panes>
+				<TitledPane animated="false"
+					text="Navegacion">
+					<content>
+						<VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+							<padding>
+								<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+							</padding>
+							<children>
+								<Hyperlink maxWidth="1.7976931348623157E308"
+									onAction="#onCalculadoraClick" text="Calculadora" />
+								<Hyperlink maxWidth="1.7976931348623157E308"
+									onAction="#onEditorClick" text="Editor" />
+								<Hyperlink maxWidth="1.7976931348623157E308"
+									onAction="#onEventosClick" text="Eventos" />
+								<Hyperlink maxWidth="1.7976931348623157E308"
+									onAction="#onLimpiaClick" text="Limpia" />
+								<Hyperlink maxWidth="1.7976931348623157E308"
+									onAction="#onEscenaClick" text="Cambia escena" />
+								<Hyperlink maxWidth="1.7976931348623157E308"
+									onAction="#onDlgClick" text="Cuadro de Dialogo" />
+								<Hyperlink maxWidth="1.7976931348623157E308"
+									onAction="#onModalClick" text="Ventana modal" />
+								<Hyperlink maxWidth="1.7976931348623157E308"
+									onAction="#onModelessClick" text="Ventana no modal" />
+								<Hyperlink maxWidth="1.7976931348623157E308"
+									onAction="#onIndependienteClick" text="Ventana independiente" />
+							</children>
+						</VBox>
+					</content>
+				</TitledPane>
+				<TitledPane fx:id="pSeleccionado" animated="false" text="Controles">
+					<content>
+						<VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+							<padding>
+								<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+							</padding>
+							<children>
+								<Hyperlink maxWidth="1.7976931348623157E308"
+									onAction="#onTextoClick" text="Texto" />
+								<Hyperlink maxWidth="1.7976931348623157E308"
+									onAction="#onTextoHTMLClick" text="Texto HTML" />
+								<Hyperlink maxWidth="1.7976931348623157E308"
+									onAction="#onNavegaClick" text="Oracle" />
+								<Hyperlink maxWidth="1.7976931348623157E308"
+									onAction="#onIndraClick" text="Indra" />
+							</children>
+						</VBox>
+					</content>
+				</TitledPane>
+			</panes>
+		</Accordion>
+	</left>
 </BorderPane>
