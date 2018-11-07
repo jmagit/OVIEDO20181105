@@ -1,63 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane fx:id="root" prefHeight="255.0" prefWidth="409.0"
-	xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
-	fx:controller="application.PrincipalController">
+<BorderPane fx:id="root" prefHeight="255.0" prefWidth="409.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PrincipalController">
 	<left>
 		<Accordion fx:id="acordeon" BorderPane.alignment="CENTER">
 			<panes>
-				<TitledPane animated="false"
-					text="Navegacion">
+				<TitledPane animated="false" text="Navegacion">
 					<content>
 						<VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
 							<padding>
 								<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
 							</padding>
 							<children>
-								<Hyperlink maxWidth="1.7976931348623157E308"
-									onAction="#onCalculadoraClick" text="Calculadora" />
-								<Hyperlink maxWidth="1.7976931348623157E308"
-									onAction="#onEditorClick" text="Editor" />
-								<Hyperlink maxWidth="1.7976931348623157E308"
-									onAction="#onEventosClick" text="Eventos" />
-								<Hyperlink maxWidth="1.7976931348623157E308"
-									onAction="#onLimpiaClick" text="Limpia" />
-								<Hyperlink maxWidth="1.7976931348623157E308"
-									onAction="#onEscenaClick" text="Cambia escena" />
-								<Hyperlink maxWidth="1.7976931348623157E308"
-									onAction="#onDlgClick" text="Cuadro de Dialogo" />
-								<Hyperlink maxWidth="1.7976931348623157E308"
-									onAction="#onModalClick" text="Ventana modal" />
-								<Hyperlink maxWidth="1.7976931348623157E308"
-									onAction="#onModelessClick" text="Ventana no modal" />
-								<Hyperlink maxWidth="1.7976931348623157E308"
-									onAction="#onIndependienteClick" text="Ventana independiente" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onCalculadoraClick" text="Calculadora" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onEditorClick" text="Editor" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onEventosClick" text="Eventos" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onLimpiaClick" text="Limpia" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onEscenaClick" text="Cambia escena" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onDlgClick" text="Cuadro de Dialogo" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onModalClick" text="Ventana modal" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onModelessClick" text="Ventana no modal" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onIndependienteClick" text="Ventana independiente" />
 							</children>
 						</VBox>
 					</content>
 				</TitledPane>
-				<TitledPane fx:id="pSeleccionado" animated="false" text="Controles">
+				<TitledPane animated="false" text="Controles">
 					<content>
 						<VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
 							<padding>
 								<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
 							</padding>
 							<children>
-								<Hyperlink maxWidth="1.7976931348623157E308"
-									onAction="#onTextoClick" text="Texto" />
-								<Hyperlink maxWidth="1.7976931348623157E308"
-									onAction="#onTextoHTMLClick" text="Texto HTML" />
-								<Hyperlink maxWidth="1.7976931348623157E308"
-									onAction="#onNavegaClick" text="Oracle" />
-								<Hyperlink maxWidth="1.7976931348623157E308"
-									onAction="#onIndraClick" text="Indra" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onTextoClick" text="Texto" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onTextoHTMLClick" text="Texto HTML" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onListadoClick" text="Listado" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onNavegaClick" text="Oracle" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onIndraClick" text="Indra" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onVerVideo" text="Video" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onMediaPlayerClick" text="Player" />
+							</children>
+						</VBox>
+					</content>
+				</TitledPane>
+				<TitledPane fx:id="pSeleccionado" animated="false" text="Graficas">
+					<content>
+						<VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+							<padding>
+								<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+							</padding>
+							<children>
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onPieClick" text="Pie" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onLineClick" text="Lineas" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onAreaClick" text="Areas" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onNavegaClick" text="Burbujas" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onIndraClick" text="Dispersion" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onVerVideo" text="Barras" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onStackedAreaChart" text="Barras Horizontales" />
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="X:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="valX" layoutX="34.0" layoutY="10.0" />
+                              <Label layoutX="10.0" layoutY="10.0" text="Y:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="valY" layoutX="70.0" layoutY="10.0" />
+                              <Label layoutX="22.0" layoutY="10.0" text="DATA:">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="valData" layoutX="70.0" layoutY="10.0" />
+                           </children>
+                        </HBox>
 							</children>
 						</VBox>
 					</content>

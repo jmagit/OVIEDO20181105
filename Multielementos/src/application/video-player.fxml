@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="283.0" prefWidth="522.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VideoPlayerController">
+   <children>
+      <TextField fx:id="txtURL" prefHeight="25.0" prefWidth="339.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="178.0" AnchorPane.topAnchor="5.0" />
+      <HBox alignment="TOP_CENTER" prefHeight="31.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <Button layoutX="208.0" layoutY="10.0" mnemonicParsing="false" onAction="#onLoad" text="Load" />
+            <Button fx:id="btnPlay" mnemonicParsing="false" onAction="#onPlay" text="Play" />
+            <Button fx:id="btnPause" mnemonicParsing="false" onAction="#onPause" text="Pause" />
+            <Button fx:id="btnStop" mnemonicParsing="false" onAction="#onStop" text="Stop" />
+         </children>
+      </HBox>
+      <MediaView fx:id="player" fitHeight="200.0" fitWidth="200.0" layoutX="25.0" layoutY="53.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="40.0" />
+   </children>
+</AnchorPane>
