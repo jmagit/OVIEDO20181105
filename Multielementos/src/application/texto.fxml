@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="269.0" prefWidth="535.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <TextFlow prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <Text rotate="-40.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Titulo del Documento" underline="true">
+               <font>
+                  <Font name="Verdana" size="48.0" />
+               </font>
+               <fill>
+                  <LinearGradient startX="1.0" startY="1.0">
+                     <stops>
+                        <Stop color="#f50303e5" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <effect>
+                  <Reflection />
+               </effect>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quisque nulla mi, hendrerit id tincidunt id, tincidunt sit amet est. Etiam eget mi quam. Sed mattis enim a dolor luctus feugiat eget sed turpis. Sed placerat facilisis odio eu vestibulum. Donec suscipit ornare lectus. Suspendisse maximus quis magna in pulvinar. Curabitur id volutpat ligula. Mauris sit amet nisl scelerisque, gravida ante id, egestas tellus.">
+               <font>
+                  <Font name="Comic Sans MS Italic" size="12.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin luctus commodo gravida. Nulla facilisi. Integer aliquam tellus sapien, a mattis turpis sagittis eu. Nunc nisl metus, pulvinar in elit semper, fermentum iaculis nunc. Phasellus vitae pellentesque libero. Duis aliquet bibendum tristique. In sit amet varius sem, eu porta massa. Mauris lobortis arcu magna, quis gravida turpis pharetra eget. Proin lorem nibh, ultrices quis rutrum sit amet, luctus accumsan odio. Donec et dui at felis pellentesque volutpat. Ut elit turpis, blandit non ligula vitae, rhoncus dapibus est. Integer nec fringilla odio, in suscipit lorem. Nulla vel nisl nec leo consequat blandit eget at nisi. Nullam a laoreet nunc." />
+         </children>
+      </TextFlow>
+   </children>
+</AnchorPane>

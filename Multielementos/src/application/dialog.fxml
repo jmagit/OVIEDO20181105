@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="216.0" prefWidth="381.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.DialogController">
+   <children>
+      <Button cancelButton="true" layoutX="312.0" layoutY="177.0" mnemonicParsing="false" onAction="#CancelarClick" text="Cancelar" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="7.0" />
+      <Button defaultButton="true" layoutX="255.0" layoutY="177.0" mnemonicParsing="false" onAction="#AceptarClick" text="Aceptar" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="69.0" />
+   </children>
+</AnchorPane>
