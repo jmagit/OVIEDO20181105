@@ -2,7 +2,6 @@ package application.model;
 
 import application.dal.Empleado;
 import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,7 +22,7 @@ public class EmpleadoModel {
 	public void setIdEmpleado(int idEmpleado) {
 		this.idEmpleado.set(Integer.toString(idEmpleado));
 	}
-	public SimpleStringProperty getIdEmpleadoProperty() {
+	public SimpleStringProperty IdEmpleadoProperty() {
 		return idEmpleado;
 	}
 	
@@ -33,7 +32,7 @@ public class EmpleadoModel {
 	public void setNombre(String nombre) {
 		this.nombre.set(nombre);
 	}
-	public SimpleStringProperty getNombreProperty() {
+	public SimpleStringProperty NombreProperty() {
 		return nombre;
 	}
 
@@ -43,7 +42,7 @@ public class EmpleadoModel {
 	public void setApellidos(String apellidos) {
 		this.apellidos.set(apellidos);
 	}
-	public SimpleStringProperty getApellidosProperty() {
+	public SimpleStringProperty ApellidosProperty() {
 		return apellidos;
 	}
 
@@ -53,7 +52,7 @@ public class EmpleadoModel {
 	public void setDelegacion(String delegacion) {
 		this.delegacion.set(delegacion);
 	}
-	public SimpleStringProperty getDelegacionProperty() {
+	public SimpleStringProperty DelegacionProperty() {
 		return delegacion;
 	}
 
@@ -63,7 +62,7 @@ public class EmpleadoModel {
 	public void setConflictivo(boolean conflictivo) {
 		this.conflictivo.set(conflictivo);
 	}
-	public SimpleBooleanProperty getConflictivoProperty() {
+	public SimpleBooleanProperty ConflictivoProperty() {
 		return conflictivo;
 	}
 
