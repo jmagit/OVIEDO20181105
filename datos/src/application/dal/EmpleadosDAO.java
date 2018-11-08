@@ -1,5 +1,6 @@
 package application.dal;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Hashtable;
 
@@ -15,38 +16,38 @@ public class EmpleadosDAO {
 		return listado.values();
 	}
 	
-	public Empleado get(int key) throws Exception {
+	public Empleado get(int key) throws IOException {
 		if(0>key || key>listado.size() )
-			throw new Exception("No encontrado.");
+			throw new IOException("No encontrado.");
 		Empleado rslt = listado.get(key);
 		if(rslt == null)
-			throw new Exception("No encontrado.");
+			throw new IOException("No encontrado.");
 		return rslt;
 	}
-	public Empleado add(Empleado item) throws Exception {
+	public Empleado insert(Empleado item) throws IOException {
 		if(item == null)
-			throw new Exception("Argumentos invalidos.");
+			throw new IOException("Argumentos invalidos.");
 		Empleado rslt = listado.get(item.getIdEmpleado());
 		if(rslt != null)
-			throw new Exception("Clave duplicada.");
+			throw new IOException("Clave duplicada.");
 		if(item.isInvalid())
-			throw new Exception("Error en datos.");
+			throw new IOException("Error en datos.");
 		listado.put(item.getIdEmpleado(), item);
 		return rslt;
 	}
-	public Empleado edit(Empleado item) throws Exception {
+	public Empleado update(Empleado item) throws IOException {
 		Empleado rslt = listado.get(item.getIdEmpleado());
 		if(rslt == null)
-			throw new Exception("No encontrado.");
+			throw new IOException("No encontrado.");
 		if(item.isInvalid())
-			throw new Exception("Error en datos.");
+			throw new IOException("Error en datos.");
 		listado.put(item.getIdEmpleado(), item);
 		return rslt;
 	}
-	public Empleado delete(int key) throws Exception {
+	public Empleado delete(int key) throws IOException {
 		Empleado rslt = listado.get(key);
 		if(rslt == null)
-			throw new Exception("No encontrado.");
+			throw new IOException("No encontrado.");
 		listado.remove(key);
 		return rslt;
 	}

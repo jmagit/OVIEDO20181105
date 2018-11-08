@@ -27,13 +27,44 @@ public class VideoPlayerController implements Initializable {
 	private Media media;
 	private MediaPlayer mediaPlayer;
 
+	private void modoPlay() {
+		btnPlay.setDisable(false);
+		btnPause.setDisable(true);
+		btnStop.setDisable(true);
+	}
+	private void modoPlaying() {
+		btnPlay.setDisable(true);
+		btnPause.setDisable(false);
+		btnStop.setDisable(false);
+	}
+	private void modoPause() {
+		btnPlay.setDisable(false);
+		btnPause.setDisable(true);
+		btnStop.setDisable(false);
+	}
 	public void onLoad(Event evento) {
 		if(txtURL.getText().equals("")) return;
+		if(mediaPlayer != null) mediaPlayer.dispose();
 		media = new Media(txtURL.getText());
 		mediaPlayer = new MediaPlayer(media);
 		player.setMediaPlayer(mediaPlayer);
 		player.setFitWidth(media.getWidth());
 		player.setFitHeight(media.getHeight());
+		mediaPlayer.setOnPlaying(()-> modoPlaying());
+		mediaPlayer.setOnPaused(()-> modoPause());
+		mediaPlayer.setOnStopped(()-> modoPlay());
+	    mediaPlayer.setOnEndOfMedia(() -> {
+	        mediaPlayer.stop();
+	        modoPlay();
+	    });
+	    player.setOnMouseClicked(e -> {
+	        if(MediaPlayer.Status.PLAYING.equals(mediaPlayer.getStatus())) {
+	            mediaPlayer.pause();
+	        } else {
+	            mediaPlayer.play();
+	        }
+	    });
+	    modoPlay();
 	}
 	public void onPlay(Event ev) {
 		mediaPlayer.play();
