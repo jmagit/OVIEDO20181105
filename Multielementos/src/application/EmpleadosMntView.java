@@ -6,7 +6,6 @@ import java.util.ResourceBundle;
 
 import application.dal.Empleado;
 import application.dal.EmpleadosDAO;
-import application.dal.Repository;
 import application.model.EmpleadoModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,8 +22,8 @@ public class EmpleadosMntView implements Initializable {
 	protected StackPane root;
 	
 	protected Parent listPane = null, formPane = null;
-	protected BaseListController<EmpleadoModel> listController;
-	protected IBaseFormController<EmpleadoModel, Empleado> formController;
+	protected EmpleadosListController listController;
+	protected EmpleadosFormController formController;
 	protected EventHandler<ActionEvent> addHandler;
 	protected EventHandler<ActionEvent> modifyHandler;
 	protected EventHandler<ActionEvent> removeHandler;
@@ -38,15 +37,16 @@ public class EmpleadosMntView implements Initializable {
 		loader.setLocation(getClass().getResource("EmpleadosList.fxml"));
 		try {
 			listPane = (Parent) loader.load();
-			listController = (BaseListController<EmpleadoModel>) loader.getController();
+			listController = (EmpleadosListController) loader.getController();
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("EmpleadosForm.fxml"));
 		try {
 			formPane = (Parent) loader.load();
-			formController = (IBaseFormController<EmpleadoModel, Empleado>) loader.getController();
+			formController = (EmpleadosFormController) loader.getController();
 			formPane.setVisible(false);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -84,7 +84,7 @@ public class EmpleadosMntView implements Initializable {
 		};
 		addHandler = new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				formController.setEntity(new Empleado());
+				formController.setModel(new Empleado());
 				formController.setCommand(acceptAddHandler, cancelHandler);
 				listPane.setVisible(false);
 				formPane.setVisible(true);
@@ -94,7 +94,7 @@ public class EmpleadosMntView implements Initializable {
 			public void handle(ActionEvent event) {
 				try {
 					if(listController.getElemento() == null) return;
-					formController.setEntity(load(listController.getElemento().getIdEmpleado()));
+					formController.setModel(load(listController.getElemento().getIdEmpleado()));
 					formController.setCommand(acceptModifyHandler, cancelHandler);
 					listPane.setVisible(false);
 					formPane.setVisible(true);
@@ -114,7 +114,7 @@ public class EmpleadosMntView implements Initializable {
 		load();
 	}
 	protected void load() {
-		Repository<Empleado> srv = new EmpleadosDAO();
+		EmpleadosDAO srv = new EmpleadosDAO();
 		ObservableList<EmpleadoModel> lst = FXCollections.observableArrayList();
 		for (Empleado emp : srv.getAll()) {
 			lst.add(new EmpleadoModel(emp));
@@ -123,25 +123,25 @@ public class EmpleadosMntView implements Initializable {
 	}
 
 	public Empleado load(int id) throws IOException {
-		Repository<Empleado> srv = new EmpleadosDAO();
+		EmpleadosDAO srv = new EmpleadosDAO();
 		return srv.get(id);
 	}
 	public void add(EmpleadoModel item) throws IOException {
-		Repository<Empleado> srv = new EmpleadosDAO();
+		EmpleadosDAO srv = new EmpleadosDAO();
 		if (item == null)
 			throw new IOException("Datos invalidos");
-		srv.insert(item.getEntity());
+		srv.insert(item.getEmpleado());
 	}
 
 	public void modify(EmpleadoModel item) throws IOException {
-		Repository<Empleado> srv = new EmpleadosDAO();
+		EmpleadosDAO srv = new EmpleadosDAO();
 		if (item == null)
 			throw new IOException("Datos invalidos");
-		srv.update(item.getEntity());
+		srv.update(item.getEmpleado());
 	}
 
 	public void remove(int id) throws IOException {
-		Repository<Empleado> srv = new EmpleadosDAO();
+		EmpleadosDAO srv = new EmpleadosDAO();
 		srv.delete(id);
 	}
 }

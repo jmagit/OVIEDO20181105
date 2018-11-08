@@ -93,6 +93,9 @@ public class PrincipalController implements Initializable {
 		EditorController cntr = (EditorController) cargar("editor.fxml");
 		cntr.setStage(Main.getStage());
 	}
+	public void onDatosClick(Event evento) {
+		cargar("empleados-mnt-view.fxml");
+	}
 
 	public void onLimpiaClick(Event evento) {
 		limpia();

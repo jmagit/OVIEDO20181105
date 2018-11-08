@@ -6,7 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class EmpleadoModel implements ModelCopiable<EmpleadoModel, Empleado> {
+public class EmpleadoModel {
 	private SimpleStringProperty idEmpleado = new SimpleStringProperty();
 	private SimpleStringProperty nombre = new SimpleStringProperty();
 	private SimpleStringProperty apellidos = new SimpleStringProperty();
@@ -14,7 +14,7 @@ public class EmpleadoModel implements ModelCopiable<EmpleadoModel, Empleado> {
 	private SimpleBooleanProperty conflictivo = new SimpleBooleanProperty();
 	
 	public EmpleadoModel() { }
-	public EmpleadoModel(Empleado item) { copyEntity(item); }
+	public EmpleadoModel(Empleado item) { copy(item); }
 	
 	public int getIdEmpleado() {
 		return Integer.parseInt(idEmpleado.get());
@@ -66,11 +66,7 @@ public class EmpleadoModel implements ModelCopiable<EmpleadoModel, Empleado> {
 		return conflictivo;
 	}
 
-	/* (non-Javadoc)
-	 * @see application.model.ModelCopiable#copy(application.dal.Empleado)
-	 */
-	@Override
-	public EmpleadoModel copyEntity(Empleado item) {
+	public EmpleadoModel copy(Empleado item) {
 		setIdEmpleado(item.getIdEmpleado());
 		setNombre(item.getNombre());
 		setApellidos(item.getApellidos());
@@ -78,11 +74,7 @@ public class EmpleadoModel implements ModelCopiable<EmpleadoModel, Empleado> {
 		setConflictivo(item.isConflictivo());
 		return this;
 	}
-	/* (non-Javadoc)
-	 * @see application.model.ModelCopiable#copy(application.model.EmpleadoModel)
-	 */
-	@Override
-	public EmpleadoModel copyModel(EmpleadoModel item) {
+	public EmpleadoModel copy(EmpleadoModel item) {
 		setIdEmpleado(item.getIdEmpleado());
 		setNombre(item.getNombre());
 		setApellidos(item.getApellidos());
@@ -90,7 +82,7 @@ public class EmpleadoModel implements ModelCopiable<EmpleadoModel, Empleado> {
 		setConflictivo(item.isConflictivo());
 		return this;
 	}
-	public Empleado getEntity() {
+	public Empleado getEmpleado() {
 		Empleado rslt = new Empleado();
 		rslt.setIdEmpleado(getIdEmpleado());
 		rslt.setNombre(getNombre());

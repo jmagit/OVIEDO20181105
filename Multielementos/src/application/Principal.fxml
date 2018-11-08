@@ -20,6 +20,7 @@
 							<children>
 								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onCalculadoraClick" text="Calculadora" />
 								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onEditorClick" text="Editor" />
+								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onDatosClick" text="Datos" />
 								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onEventosClick" text="Eventos" />
 								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onLimpiaClick" text="Limpia" />
 								<Hyperlink maxWidth="1.7976931348623157E308" onAction="#onEscenaClick" text="Cambia escena" />
